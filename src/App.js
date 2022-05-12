@@ -39,7 +39,8 @@ class App extends React.Component {
     await lottery.methods.pickWinner().send({ 
       from: accounts[0] 
     });
-    this.setState({ message: 'A winner has been picked!' });
+    const winner = await lottery.methods.lastWinner().call();
+    this.setState({ message: `A winner has been picked! ${winner} won ${web3.utils.fromWei(this.state.balance, 'ether')} ether.` });
   }
 
   render() {    

@@ -1,6 +1,6 @@
 import web3 from "./web3";
 
-const address = "0xe2d49E3B7915A61313f7767144e324B463619903";
+const address = "0x04e5E8169d35Fa353f0C1AF09C8D57d6Ef725B13";
 const abi = [
   {
     constant: true,
@@ -42,6 +42,15 @@ const abi = [
     constant: true,
     inputs: [{ name: "", type: "uint256" }],
     name: "players",
+    outputs: [{ name: "", type: "address" }],
+    payable: false,
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: "lastWinner",
     outputs: [{ name: "", type: "address" }],
     payable: false,
     stateMutability: "view",
